@@ -1,0 +1,86 @@
+<% layout("layouts/boilerplate.ejs") %>
+<div class="row">
+  <h1 class="text-center mb-3">New Campground</h1>
+  <div class="col-6 offset-3">
+    <form
+      action="/campgrounds"
+      method="POST"
+      novalidate
+      class="validated-form"
+      enctype="multipart/form-data"
+    >
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input
+          type="text"
+          id="title"
+          name="campground[title]"
+          placeholder="Campground Title"
+          class="form-control"
+          autofocus="true"
+          required
+        />
+        <div class="valid-feedback">Looks good!</div>
+        <div class="invalid-feedback">Please enter a valid Title</div>
+      </div>
+      <div class="mb-3">
+        <label for="location" class="form-label">Location</label>
+        <input
+          type="text"
+          id="location"
+          name="campground[location]"
+          placeholder="Campground Location"
+          class="form-control"
+          required
+        />
+        <div class="valid-feedback">Looks good!</div>
+        <div class="invalid-feedback">Please enter a valid Location</div>
+      </div>
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea
+          type="text"
+          id="description"
+          name="campground[description]"
+          placeholder="Campground Description"
+          class="form-control"
+          required
+        ></textarea>
+        <div class="valid-feedback">Looks good!</div>
+        <div class="invalid-feedback">Please enter a valid Description</div>
+      </div>
+      <div class="mb-3">
+        <label for="price" class="form-label">Campground Price</label>
+        <div class="input-group">
+          <span class="input-group-text">$</span>
+          <input
+            type="text"
+            id="price"
+            name="campground[price]"
+            placeholder="0.00"
+            class="form-control"
+            required
+          />
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">Please enter a valid Price</div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="image">Upload image(s)</label>
+        <input
+          type="file"
+          class="form-control"
+          name="image"
+          id="image"
+          multiple
+        />
+      </div>
+      <div class="mb-3">
+        <button class="btn btn-success">Add Campground</button>
+      </div>
+    </form>
+    <footer>
+      <a href="/campgrounds" class="btn btn-secondary">Back to Campgrounds</a>
+    </footer>
+  </div>
+</div>
