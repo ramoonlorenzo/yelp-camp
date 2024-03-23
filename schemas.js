@@ -22,7 +22,7 @@ const BaseJoi = require("joi");
 //   },
 // });
 
-const Joi = BaseJoi.extend(extension);
+const Joi = BaseJoi; // Note: .extend(extension)
 
 module.exports.campgroundJoiSchema = Joi.object({
   campground: Joi.object({
