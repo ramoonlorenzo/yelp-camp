@@ -26,17 +26,17 @@ const Joi = BaseJoi; // Note: .extend(extension)
 
 module.exports.campgroundJoiSchema = Joi.object({
   campground: Joi.object({
-    title: Joi.string().required().escapeHTML(),
+    title: Joi.string().required(), // Note: escapeHTML()
     price: Joi.number().required().min(0),
-    description: Joi.string().required().escapeHTML(),
-    location: Joi.string().required().escapeHTML(),
+    description: Joi.string().required(), // Note: escapeHTML()
+    location: Joi.string().required(), // Note: escapeHTML()
   }).required(),
   deleteImages: Joi.array(),
 });
 
 module.exports.reviewJoiSchema = Joi.object({
   review: Joi.object({
-    body: Joi.string().required().escapeHTML(),
+    body: Joi.string().required(), // Note: escapeHTML()
     rating: Joi.number().required().min(1).max(5),
   }),
 }).required();
